@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Fasthand&family=Freehand&family=Koulen&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Siemreap&family=Tektur:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Fasthand&family=Freehand&family=Koulen&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Siemreap&family=Tektur:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    img {
+        width: 100%;
+        height: 750px;
+        object-fit: cover;
+    }
+
+    .menu1 li {
+        background-color: rgb(208, 219, 219);
+        padding: 5px 10px;
+        margin: 10px 4px 0 4px;
+
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1030;
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        font-family: "Poppins", sans-serif;
+
+    }
+
+    .navbar-brand {
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 80px 0;
+    }
+
+    body {
+        padding-top: 55px;
+    }
+
+    #star {
+        width: 100px;
+        height: 100px;
+        top: 64%;
+        right: 30%;
+    }
+
+    /* #img_shirt{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+         }  */
+    .card-img-top {
+        max-height: 250px;
+        max-width: 100%;
+        width: auto;
+        object-fit: contain;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .wishlist-icon {
+        border-radius: 50%;
+        background-color: rgb(255, 255, 255);
+        width: 30px;
+        font-size: 20px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .badge {
+        width: 50px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    /* .card{
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+        } */
+    .card {
+        transition: transform 0.3s, box-shadow 0.3s;
+
+        border-radius: 10px;
+        overflow: hidden;
+
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-img-topp {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .btn-outline-dark:hover {
+        background-color: #212529;
+        color: white;
+    }
+
+    .btn-dark {
+        background-color: #212529;
+    }
+
+    .btn-dark:hover {
+        background-color: #000;
+    }
+
+    .footer {
+        background-color: #212529;
+        color: white;
+    }
+
+    .footer a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        color: white;
+    }
+
+    .social-icon {
+        width: 36px;
+        height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s;
+    }
+
+    .social-icon:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .wishlist-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        z-index: 1;
+    }
+
+    .wishlist-icon:hover {
+        color: #dc3545;
+    }
+
+    .sale-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 1;
+    }
+
+    #image-shirt {
+        width: 100%;
+        height: 50%;
+    }
+
+    #small-image {
+        width: 100%;
+        height: 80%;
+    }
+</style>
+
+<body>
+    <div class="Popular mb-4 pt-5">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart "></i>
+                        </div>
+                        <img src="asset/image/w-man2.webp" class="card-img-top" alt="White T-Shirt">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">T-Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Essential White T-Shirt</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div>
+                                    <span class="fw-bold">$24.99</span>
+                                </div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Soft cotton t-shirt with a comfortable regular
+                                fit.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart "></i>
+                        </div>
+                        <img src="asset/image/w-man3.webp" class="card-img-top" alt="White T-Shirt">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">T-Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Essential White T-Shirt</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div>
+                                    <span class="fw-bold">$24.99</span>
+                                </div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Soft cotton t-shirt with a comfortable regular
+                                fit.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart "></i>
+                        </div>
+                        <img src="asset/image/w-man4.webp" class="card-img-top" alt="White T-Shirt">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">T-Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Essential White T-Shirt</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div>
+                                    <span class="fw-bold">$24.99</span>
+                                </div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Soft cotton t-shirt with a comfortable regular
+                                fit.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .thumbnail-img {
+      object-fit: contain;
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .thumbnail-img.active {
+      border-color: #000;
+    }
+    .color-option img {
+      width: 50px;
+      height: 60px;
+      cursor: pointer;
+      object-fit: cover;
+      border: 2px solid transparent;
+    }
+    .color-option img.active {
+      border-color: #000;
+    }
+    #mainImage{
+        width: 400px;
+        height: 450px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-5">
+  <div class="row">
+    <!-- Thumbnails and Main Image -->
+    <div class="col-md-6 d-flex">
+      <div class="me-2 d-flex flex-column gap-2">
+        <img src="asset/image/man1.jpg" class="thumbnail-img img-thumbnail" onclick="changeMainImage(this)">
+        <img src="asset/image/man2.jpg" class="thumbnail-img img-thumbnail" onclick="changeMainImage(this)">
+        <img src="asset/image/man3.jpg" class="thumbnail-img img-thumbnail" onclick="changeMainImage(this)">
+        <img src="asset/image/man4.jpg" class="thumbnail-img img-thumbnail" onclick="changeMainImage(this)">
+      </div>
+      <img id="mainImage" src="asset/image/hat-w1.jpg " class="img-fluid" alt="Main Product Image">
+    </div>
+
+    <!-- Product Info -->
+    <div class="col-md-6">
+      <h4>Men Casual Round Neck T-Shirt</h4>
+      <p class="text-warning mb-1">
+        ★★★★☆ <small class="text-muted">(4.8)</small>
+      </p>
+      <h3>$100</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam laborum aut explicabo molestias voluptas, eum nulla doloremque laboriosam.</p>
+
+      <!-- Size -->
+      <div class="my-3">
+        <p><strong>Select Size</strong></p>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-secondary">S</button>
+          <button type="button" class="btn btn-outline-secondary active">M</button>
+          <button type="button" class="btn btn-outline-secondary">L</button>
+          <button type="button" class="btn btn-outline-secondary">XL</button>
+          <button type="button" class="btn btn-outline-secondary">XXL</button>
+        </div>
+      </div>
+
+      <!-- Color -->
+      <div class="my-3">
+        <p><strong>Select Color</strong></p>
+        <div class="d-flex gap-2 color-option">
+          <img src="https://via.placeholder.com/50x60/2e4e1f/ffffff?text=+" onclick="changeMainImage(this)">
+          <img src="https://via.placeholder.com/50x60/fedc00/000000?text=+" onclick="changeMainImage(this)">
+          <img src="https://via.placeholder.com/50x60/dd3333/ffffff?text=+" onclick="changeMainImage(this)">
+          <img src="https://via.placeholder.com/50x60/f5f5f5/000000?text=+" onclick="changeMainImage(this)">
+          <img src="https://via.placeholder.com/50x60/b01f3c/ffffff?text=+" onclick="changeMainImage(this)">
+        </div>
+      </div>
+
+      <button class="btn btn-dark my-3">Add to Cart</button>
+
+      <p class="mt-4">
+        <strong>100% Original Product.</strong><br>
+        Easy return and exchange policy within 14 days.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS + Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function changeMainImage(el) {
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = el.src;
+
+    // Active class for thumbnails
+    document.querySelectorAll('.thumbnail-img, .color-option img').forEach(img => img.classList.remove('active'));
+    el.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
+
+
+<div class="col-md-4 col-sm-6">
+    <div class="card h-100">
+        <div class="wishlist-icon position-absolute px-1">
+            <i class="far fa-heart "></i>
+        </div>
+        <a href="black_shirt.html">
+            <img src="https://zandokh.com/image/catalog/products/2025-04/5132503011/0044.jpg"
+                class="card-img-top" alt="Black Shirt">
+        </a>
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-dark">Shirt</span>
+                <div>
+                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i><span class="ms-1 small">(5.0)</span>
+                </div>
+            </div>
+            <h5 class="card-title">Classic Black Shirt</h5>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div><span class="fw-bold">$34.99</span></div>
+            </div>
+            <p class="card-text small text-muted mb-3">Stylish and sleek black shirt suitable for casual and formal wear.</p>
+            <div class="d-grid">
+                <button class="btn btn-outline-dark">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 col-sm-6">
+    <div class="card h-100">
+        <div class="wishlist-icon position-absolute px-1">
+            <i class="far fa-heart "></i>
+        </div>
+        <img src="asset/image/man1.jpg" class="card-img-top" alt="Blue Hoodie">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-primary">Hoodie</span>
+                <div>
+                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i><span class="ms-1 small">(5.0)</span>
+                </div>
+            </div>
+            <h5 class="card-title">Navy Blue Hoodie</h5>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div><span class="fw-bold">$44.50</span></div>
+            </div>
+            <p class="card-text small text-muted mb-3">Warm and comfy hoodie for chilly days with adjustable drawstrings.</p>
+            <div class="d-grid">
+                <button class="btn btn-outline-dark">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 col-sm-6">
+    <div class="card h-100">
+        <div class="wishlist-icon position-absolute px-1">
+            <i class="far fa-heart "></i>
+        </div>
+        <img src="asset/image/man4.jpg" class="card-img-top" alt="Denim Jacket">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-info">Jacket</span>
+                <div>
+                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i><span class="ms-1 small">(5.0)</span>
+                </div>
+            </div>
+            <h5 class="card-title">Denim Jacket</h5>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div><span class="fw-bold">$69.00</span></div>
+            </div>
+            <p class="card-text small text-muted mb-3">Classic denim jacket with a modern fit and durable stitching.</p>
+            <div class="d-grid">
+                <button class="btn btn-outline-dark">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 col-sm-6">
+    <div class="card h-100">
+        <div class="wishlist-icon position-absolute px-1">
+            <i class="far fa-heart "></i>
+        </div>
+        <img src="asset/image/man5.jpg" class="card-img-top" alt="Graphic Tee">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-secondary">T-Shirt</span>
+                <div>
+                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i><span class="ms-1 small">(5.0)</span>
+                </div>
+            </div>
+            <h5 class="card-title">Graphic Cotton Tee</h5>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div><span class="fw-bold">$22.00</span></div>
+            </div>
+            <p class="card-text small text-muted mb-3">Cool printed tee made from breathable fabric for everyday wear.</p>
+            <div class="d-grid">
+                <button class="btn btn-outline-dark">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>

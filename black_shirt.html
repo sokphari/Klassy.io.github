@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .thumbnail-img {
+      object-fit: contain;
+      width: 120px;
+      height: 100px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .thumbnail-img.active {
+      border-color: #000;
+    }
+    .color-option img {
+      width: 70px;
+      height: 70px;
+      cursor: pointer;
+      object-fit: cover;
+      border: 2px solid transparent;
+    }
+    .color-option img.active {
+      border-color: #000;
+    }
+    #Image{
+        width: 400px;
+        height: 525px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-6 d-flex">
+      <div class="me-2 d-flex flex-column gap-1">
+        <img src="https://zandokh.com/image/catalog/products/2025-04/5132503011/0044.jpg" class="thumbnail-img img-thumbnail" onclick="changeMainImage(this)">
+        <img src="https://zandokh.com/image/catalog/products/2025-04/5132503011/0045.jpg" class="thumbnail-img img-thumbnail" onclick="changeMainImage(this)">
+        <img src="https://zandokh.com/image/catalog/products/2025-04/5132503011/ZANDO17042025AFTERNOON14705.jpg" class="thumbnail-img img-thumbnail" onclick="changeMainImage(this)">
+        <img src="https://zandokh.com/image/catalog/products/2025-04/5132503011/ZANDO17042025AFTERNOON14700.jpg" class="thumbnail-img img-thumbnail" onclick="changeMainImage(this)">
+        <img src="https://zandokh.com/image/catalog/products/2025-04/5132503011/ZANDO17042025AFTERNOON14702.jpg" class="thumbnail-img img-thumbnail" onclick="changeMainImage(this)">
+      </div>
+      <img id="Image" src="https://zandokh.com/image/catalog/products/2025-04/5132503011/0044.jpg" class="img-fluid" alt="Main Product Image">
+    </div>
+
+    <!-- imform -->
+    <div class="col-md-6">
+      <h4>Men Casual Round Neck T-Shirt</h4>
+      <p class="text-warning mb-1">
+        ★★★★☆ <small class="text-muted">(4.8)</small>
+      </p>
+      <h3>$100</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam laborum aut explicabo molestias voluptas, eum nulla doloremque laboriosam.</p>
+
+      <!-- Size -->
+      <div class="my-3">
+        <p><strong>Select Size</strong></p>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-secondary">S</button>
+          <button type="button" class="btn btn-outline-secondary active">M</button>
+          <button type="button" class="btn btn-outline-secondary">L</button>
+          <button type="button" class="btn btn-outline-secondary">XL</button>
+          <button type="button" class="btn btn-outline-secondary">XXL</button>
+        </div>
+      </div>
+
+      <!-- Color -->
+      <div class="my-3">
+        <p><strong>Select Color</strong></p>
+        <div class="d-flex gap-2 color-option">
+          <img src="https://zandokh.com/image/catalog/products/2025-04/5132503011/0044.jpg">
+          <img src="https://zandokh.com/image/catalog/products/2025-04/5132503011/0043.jpg">
+        </div>
+      </div>
+
+      <button class="btn btn-dark my-3">Add to Cart</button>
+
+      <p class="mt-4">
+        <strong>100% Original Product.</strong><br>
+        Easy return and exchange policy within 14 days.
+      </p>
+    </div>
+  </div>
+</div>
+</body>
+  <script>
+  const Image = document.getElementById('Image');
+  const changeMainImage=(e)=> {
+  Image.src = e.src;
+
+    // Active class for thumbnails
+    document.querySelectorAll('.thumbnail-img, .color-option img').forEach(img => img.classList.remove('active'));
+    e.classList.add('active');
+  }
+</script>
+
+</html>

@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shite Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- style css  -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Merienda:wght@300..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400..900&family=DM+Serif+Display:ital@0;1&family=Fasthand&family=Freehand&family=Koulen&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Siemreap&family=Tektur:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Fasthand&family=Freehand&family=Koulen&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Siemreap&family=Tektur:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Fasthand&family=Freehand&family=Koulen&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Siemreap&family=Tektur:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+        .special{
+             font-family: "Merienda", cursive;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+            height: 750px;
+            object-fit: cover;
+        }
+
+        .menu1 li {
+            background-color: rgb(208, 219, 219);
+            padding: 5px 10px;
+            margin: 10px 4px 0 4px;
+
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-family: "Poppins", sans-serif;
+
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+        }
+
+        body {
+            padding-top: 55px;
+        }
+
+        #star {
+            width: 100px;
+            height: 100px;
+            top: 64%;
+            right: 30%;
+        }
+
+
+        .card-img-top {
+            max-height: 250px;
+            max-width: 100%;
+            width: auto;
+            object-fit: contain;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .wishlist-icon {
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+            width: 30px;
+            font-size: 20px;
+            top: 10px;
+            right: 10px;
+        }
+
+        .badge {
+            width: 50px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            border-radius: 10px;
+            overflow: hidden;
+
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-topp {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .btn-outline-dark:hover {
+            background-color: #212529;
+            color: white;
+        }
+
+        .btn-dark {
+            background-color: #212529;
+        }
+
+        .btn-dark:hover {
+            background-color: #000;
+        }
+
+        .footer {
+            background-color: #212529;
+            color: white;
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .wishlist-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1;
+        }
+
+        .wishlist-icon:hover {
+            color: #dc3545;
+        }
+
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+        }
+
+        #image-shirt {
+            width: 100%;
+            height: 50%;
+        }
+
+        #small-image {
+            width: 100%;
+            height: 80%;
+        }
+        .navbar-nav{
+              font-family: "Merienda", cursive;
+        }
+        .navbar-brand {
+            font-family: "Freehand", cursive;
+        }
+    </style>
+
+    <!-- header  -->
+    <div class="container-fluid p-0 ">
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm py-2 px-5 ">
+            <div class="container px-5">
+                <a class="navbar-brand fw-bold fs-2 text-secondary" href="#">S-<span
+                        class="text-info fs-4 fw-bold">Klassy</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-uppercase fs-6">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">All Shirt</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="shirt.girl.html" id="navbarDropdown" role="button"
+                                aria-expanded="false">
+                                Woman
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="shirt-boy.html" tabindex="-1" aria-disabled="true">
+                                Man
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="shirt-bloge.html" tabindex="-1" aria-disabled="true">
+                                Blogs
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="menu1 d-flex align-items-center">
+                        <li class="list-unstyled"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                                    height="18" fill="currentColor" class="bi text-dark bi-person-fill"
+                                    viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                </svg></a></li>
+                        <li class="list-unstyled"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                                    height="18" fill="currentColor" class="bi text-dark bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                </svg></a></li>
+                        <li class="list-unstyled"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                                    height="18" fill="currentColor" class="bi text-dark bi-cart3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                </svg></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- hero-section  -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Premium Shirt Collection</h1>
+            <p class="lead mb-4">Discover our exclusive range of high-quality shirts for every occasion</p>
+            <a href="#shirt-collection" class="btn btn-light btn-lg px-4">Shop Now</a>
+        </div>
+    </section>
+    <!-- navigation -->
+    <!--<div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6">
+                    
+                    <div class="container">
+                        <div style="height: 42rem;" class="card cardd">
+                            <img src="./asset/image/priss.png" class="card-img-topp" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-sm-12 col-md-6">
+                    <div class="container">
+                        <div class="row g-4">
+                            
+                            <div class="col-6">
+                                <div class="container">
+                                    <div style="height: 20rem;" class="card">
+                                        <img src="..." class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="container">
+                                    <div style="height: 20rem;" class="card">
+                                        <img src="..." class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="container">
+                                    <div style="height: 20rem;" class="card">
+                                        <img src="..." class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="container">
+                                    <div style="height: 20rem;" class="card">
+                                        <img src="..." class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <!-- popular  -->
+    <div class="Popular mb-4">
+        <div class="container">
+            <div class="container text-center pt-4">
+                <h5 class="pb-2">Popular Shirt</h5>
+                <h4 class="pb-4 special">Our Special Shirts</h4>
+            </div>
+            <div class="row g-3">
+                <!-- <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="container text-center">
+                        <div class="card position-relative" style="width: 14.5rem; height: 24.3rem; ">
+                            <span class="badge bg-danger ">SALE</span>
+                            <img id="img_shirt" src="https://assets.adidas.com/images/w_600,f_auto,q_auto/1a6eeb0726ba48c49553af03009ad875_9366/Train_Essentials_Feelready_Training_Tee_Black_IC7438_01_laydown.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="wishlist-icon position-absolute">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                                <h6 class="card-title pb-3">adidas originals Summer glow Tee</h6>
+                                <span><img class="position-absolute" id="star" src="./asset/image/fivestar.png" alt=""></span>
+                                <h6 class="card-text"> 
+                                     $20.00 <del>$25.00</del>
+                                 </h6>
+                                <a href="#" class="btn btn-outline-dark mx-4">Add to Card</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <img src="asset/image/w-man7.webp" class="card-img-top" alt="Classic White Tee">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">T-Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Classic White Tee</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$22.99</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">A breathable, everyday cotton t-shirt for casual
+                                wear.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <img src="asset/image/w-man2.webp" class="card-img-top" alt="Slim Fit Tee">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">T-Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Slim Fit Tee</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$26.50</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Modern slim fit t-shirt that pairs with jeans or
+                                joggers.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <img src="asset/image/w-man3.webp" class="card-img-top" alt="Urban Black Tee">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">T-Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Urban Black Tee</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$28.00</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Sleek black t-shirt with a soft-touch finish for
+                                comfort.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <img src="asset/image/w-man4.webp" class="card-img-top" alt="Crew Neck Tee">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">T-Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Crew Neck Tee</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$23.75</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Comfortable crew neck made with pre-shrunk cotton
+                                blend.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <img src="asset/image/w-shoe-18.jpg" class="card-img-top" alt="Running Sneakers">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-primary">Shoes</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Running Sneakers</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$64.99</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Lightweight sneakers built for speed and comfort.
+                            </p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <img src="asset/image/w-man5.webp" class="card-img-top" alt="Relaxed Fit Tee">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">T-Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Relaxed Fit Tee</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$21.49</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Loose fit tee ideal for lounging and casual
+                                settings.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <img src="asset/image/w-man6.webp" class="card-img-top" alt="V-Neck T-Shirt">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">T-Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
+                                        class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">V-Neck T-Shirt</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$25.00</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Stylish v-neck t-shirt for a clean, modern look.
+                            </p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <img src="asset/image/w-shoe-15.jpg" class="card-img-top" alt="Running Shoes">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-success">Shoes</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Running Sneakers</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div>
+                                    <span class="fw-bold">$59.99</span>
+                                </div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Lightweight running shoes designed for maximum
+                                .</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <img src="asset/image/w-shoe-17.jpg" class="card-img-top" alt="Formal Shoes">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-primary">Footwear</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Classic Leather Loafers</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div>
+                                    <span class="fw-bold">$89.50</span>
+                                </div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Elegant and durable loafers perfect for formal
+                                occasions.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart "></i>
+                        </div>
+                        <a href="black_shirt.html">
+                            <img src="https://zandokh.com/image/catalog/products/2025-04/5132503011/0044.jpg"
+                                class="card-img-top" alt="Black Shirt">
+                        </a>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-dark">Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i><span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Classic Black Shirt</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$34.99</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Stylish and sleek black shirt suitable for casual
+                                and formal wear.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart "></i>
+                        </div>
+                        <img src="asset/image/man1.jpg" class="card-img-top" alt="Blue Hoodie">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-primary">Hoodie</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i><span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Navy Blue Hoodie</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$44.50</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Warm and comfy hoodie for chilly days with
+                                adjustable drawstrings.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart "></i>
+                        </div>
+                        <img src="asset/image/man4.jpg" class="card-img-top" alt="Denim Jacket">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-info">Jacket</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i><span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Denim Jacket</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$69.00</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Classic denim jacket with a modern fit and
+                                durable stitching.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart "></i>
+                        </div>
+                        <img src="asset/image/man5.jpg" class="card-img-top" alt="Graphic Tee">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">T-Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i><span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Graphic Cotton Tee</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$22.00</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Cool printed tee made from breathable fabric for
+                                everyday wear.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart "></i>
+                        </div>
+                        <img src="asset/image/man7.jpg" class="card-img-top" alt="White Polo Shirt">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-warning text-dark">Polo</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Classic White Polo Shirt</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div>
+                                    <span class="fw-bold">$29.99</span>
+                                </div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">A breathable and stylish polo perfect for casual
+                                and semi-formal wear.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart "></i>
+                        </div>
+                        <img src="asset/image/w-shoe-14.jpg" class="card-img-top" alt="Running Shoes">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-success">Shoes</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Lightweight Running Shoes</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div>
+                                    <span class="fw-bold">$64.99</span>
+                                </div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Designed for maximum performance and comfort
+                                during long runs.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 1 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <img src="asset/image/man9.webp" class="card-img-top" alt="Minimalist Cotton Tee">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">T-Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Minimalist Cotton Tee</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$22.99</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Lightweight and soft, ideal for everyday casual
+                                wear.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <img src="asset/image/man8.jpg" class="card-img-top" alt="Urban Style T-Shirt">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">T-Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Urban Style T-Shirt</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$26.50</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Trendy design with a perfect fit for street-style
+                                lovers.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <img src="asset/image/man6.jpg" class="card-img-top" alt="Slim Fit Tee">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">T-Shirt</span>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-1 small">(5.0)</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Slim Fit Tee</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><span class="fw-bold">$23.75</span></div>
+                            </div>
+                            <p class="card-text small text-muted mb-3">Form-fitting T-shirt ideal for layering or solo
+                                wear.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- size shirt  -->
+    <div class="container">
+        <div class="container pt-5 m-0">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 p-0">
+                    <div class="container slider">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <!-- <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
+                            </div> -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img id="image-shirt" src="asset/image/adidas1.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img id="image-shirt" src="asset/image/adidas2.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img id="image-shirt" src="asset/image/adidas3.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img id="image-shirt" src="asset/image/adidas4.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img id="image-shirt" src="asset/image/adidas5.png" class="d-block w-100" alt="...">
+                                </div>
+
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-3 pt-3 d-flex justify-content-center">
+                        <div class="col-2">
+                            <div class="card active" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide-to="0" aria-current="true" aria-label="Slide 1">
+                                <!-- img -->
+                                <img id="small-image" src="asset/image/adidas1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="card active" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide-to="1" aria-current="true" aria-label="Slide 2">
+                                <!-- img -->
+                                <img id="small-image" src="asset/image/adidas2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="card active" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide-to="2" aria-current="true" aria-label="Slide 3">
+                                <!-- img -->
+                                <img id="small-image" src="asset/image/adidas3.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="card active" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide-to="3" aria-current="true" aria-label="Slide 4">
+                                <!-- img -->
+                                <img id="small-image" src="asset/image/adidas4.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="card active" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide-to="4" aria-current="true" aria-label="Slide 5">
+                                <!-- img -->
+                                <img id="small-image" src="asset/image/adidas5.png" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="Card border-0 shadow-sm p-3">
+                        <h4>Adidas </h4>
+                        <p><span class="bg-success text-light rounded">$22.99</span></p>
+                        <p class="opacity-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+                            molestiae dolorem eos dolorum quos consectetur natus? Voluptates consequuntur dolorem
+                            cumque?</p>
+                        <div class="quantity d-flex">
+                            <h4>Quality:</h4>
+                            <div class="qty-control mx-3 pt-1">
+                                <button class="border-0 bg-danger px-3 py-1 text-light" type="button">-</button>
+                                <input style="width: 40px; height: 32px;" value="1" type="text">
+                                <button class="border-0 bg-success px-3 py-1 text-light" type="button">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Newsletter -->
+    <section class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p class="text-muted mb-4">Get the latest updates on new arrivals and special offers</p>
+                    <form class="row g-3 justify-content-center">
+                        <div class="col-md-8">
+                            <input type="email" class="form-control" placeholder="Your email address">
+                        </div>
+                        <div class="col-md-auto">
+                            <button type="submit" class="btn btn-light">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="logo">
+
+    </section>
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-3">StyleHub</h5>
+                    <p class="text-muted">Your destination for premium quality shirts and fashion essentials.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="mb-3">Shop</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Men's Shirts</a></li>
+                        <li class="mb-2"><a href="#">Women's Shirts</a></li>
+                        <li class="mb-2"><a href="#">New Arrivals</a></li>
+                        <li class="mb-2"><a href="#">Sale</a></li>
+                        <li class="mb-2"><a href="#">Collections</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="mb-3">Help</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">FAQs</a></li>
+                        <li class="mb-2"><a href="#">Shipping Info</a></li>
+                        <li class="mb-2"><a href="#">Returns</a></li>
+                        <li class="mb-2"><a href="#">Size Guide</a></li>
+                        <li class="mb-2"><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-3">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Fashion Street, City, Country
+                        </li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i>0768020358</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>sokphari8@gmail.com</li>
+                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Mon-Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">© 2025 StyleHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <img src="./asset/image/myman.png" alt="Payment Methods" class="img-fluid"
+                        style="max-width: 250px;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+
+</html>
