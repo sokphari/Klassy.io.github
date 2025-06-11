@@ -108,64 +108,15 @@ document.getElementById('product-search').addEventListener('input', function () 
     });
 });
 
-// function addToCard(product) {
-//     const imageElement = product.querySelector('.card-img-top');
-//     const imageSrc = imageElement ? imageElement.src : '';
-//     const title = product.querySelector('.card-title').textContent;
-//     const textPrice = product.querySelector('.product-price').textContent;
-//     const price = parseFloat(textPrice.replace('$', ''));
-//     const existingItem = cardItem.find(item => item.title === title);
+//click icon heart
+function toggleWishlist(iconContainer) {
+    const icon = iconContainer.querySelector('i');
 
-//     if (existingItem) {
-//         existingItem.quantity += 1;
-//     } else {
-//         cardItem.push({
-//             title,
-//             textPrice,
-//             price,
-//             quantity: 1,
-//             image: imageSrc,
-//         });
-//     }
-
-//     updateLocalStorage();
-//     updateCardDisplay();
-// }
-// function updateCardDisplay() {
-//     const cardList = document.getElementById('card-items')
-//     const totalEmlement = document.getElementById('total-price')
-//     const countEmement = document.getElementById('card-count    ')
-//     cardList.innerHTML = '';
-//     total = cardItem.reduce((sum, item) => sum + item.price * item.quantity, 0);
-//     itemsCount = cardItem.reduce((count, item) => count + item.price + item.quantity, 0);
-//     cardItem.forEach((item) => {
-//         const li = document.createElement('li');
-//         li.classList = 'card-item';
-//         li.innerHTML = `
-//         <img src="${item.image}" alt="" class="card-item-image">
-//         <div class="card-item-detail">
-//             <div class="card-item-name">${item.title}</div>
-//             <div class="card-item-price">${item.textPrice} x ${item.quantity}</div>
-//         </div>
-//         <div class="quantity-controll">
-//             <button type="button" onclick="changQuantity('${item.title}', -1)">-</button>
-//             <button type="button" onclick="changQuantity('${item.title}', 1)">+</button>
-//         </div>
-//         <button type="button" class="remove" onclick="removeItem('${item.title}')">x</button>
-//     `;
-//         cardList.appendChild(li);
-//     });
-
-//     totalEmlement.textContent = total.toFixed(2);
-//     countEmement.textContent = itemsCount;
-
-// }
-// function updateLocalStorage() {
-//     localStorage.setItem("cardItem", JSON.stringify(cardItem));
-// }
-// // how to click model
-// let cardIcon = document.querySelector('.card-icon');
-// let cardModel = document.querySelector('.card-modol');
-// let cardClose = document.querySelector('.close-btn');
-// cardClose.addEventListener("click", () => cardModel.classList.remove('open'));
-// cardIcon.addEventListener("click", () => cardModel.classList.add('open'));
+    if (icon.classList.contains('far')) {
+        icon.classList.remove('far');
+        icon.classList.add('fas', 'text-danger'); // filled heart + red
+    } else {
+        icon.classList.remove('fas', 'text-danger');
+        icon.classList.add('far'); // outline heart
+    }
+}

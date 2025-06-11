@@ -8,313 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+<style>
+    #img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+    }
+</style>
 
 <body>
     <!-- style css  -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Merienda:wght@300..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400..900&family=DM+Serif+Display:ital@0;1&family=Fasthand&family=Freehand&family=Koulen&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Siemreap&family=Tektur:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Fasthand&family=Freehand&family=Koulen&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Siemreap&family=Tektur:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Fasthand&family=Freehand&family=Koulen&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Siemreap&family=Tektur:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-        #qr{
-            text-decoration: none;
-        }
-        .card-modol ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 1rem 0;
-            max-height: 60vh;
-            overflow-y: auto;
-            display: grid;
-            gap: 10px;
-        }
-
-        .card-item {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: white;
-            gap: 1rem;
-        }
-
-        .card-item-image {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .card-item-detail {
-            flex-grow: 1;
-        }
-
-        .quantity-controll button,
-        .remove {
-            margin-left: 5px;
-            padding: 3px 8px;
-        }
-
-        .card-modol.open {
-            right: 0;
-            transition: all 0.5s cubic-bezier(0.075, 0.83, 0.165, 1);
-        }
-
-        .card-modol {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            max-width: 500px;
-            width: 100%;
-            height: 100vh;
-            background-color: white;
-            padding: 2rem;
-            box-shadow: 0px 10px 5px rgb(134, 132, 132);
-            z-index: 1001;
-            transition: all 0.5s cubic-bezier(0.075, 0.83, 0.165, 1);
-
-
-        }
-
-        .card-head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 2px solid wheat;
-            padding-bottom: 1rem;
-
-        }
-
-        .card-head h2 {
-            color: gray;
-        }
-
-        .close-btn {
-            font-size: 20px;
-            background: white;
-            border: none;
-            padding: 2px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.5s cubic-bezier(0.075, 0.83, 0.165, 1);
-        }
-
-        .card-total {
-            font-weight: 600;
-            font-size: 1.2rem;
-            text-align: right;
-            border-top: 1px solid white;
-            padding-top: 1rem;
-            margin-top: 1rem;
-        }
-
-        .checkout-btn {
-            padding: 8px 0;
-            background-color: red;
-            color: white;
-            text-align: center;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 8ox;
-        }
-
-        .special {
-            font-family: "Merienda", cursive;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-
-        }
-
-        img {
-            width: 100%;
-            height: 750px;
-            object-fit: cover;
-        }
-
-        .menu1 li {
-            background-color: rgb(208, 219, 219);
-            padding: 5px 10px;
-            margin: 10px 4px 0 0px;
-
-
-        }
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            font-family: "Poppins", sans-serif;
-
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 0;
-        }
-
-        body {
-            padding-top: 55px;
-        }
-
-        #star {
-            width: 100px;
-            height: 100px;
-            top: 64%;
-            right: 30%;
-        }
-
-
-        .card-img-top {
-            max-height: 250px;
-            max-width: 100%;
-            width: auto;
-            object-fit: contain;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-
-        }
-
-        .wishlist-icon {
-            border-radius: 50%;
-            background-color: rgb(255, 255, 255);
-            width: 30px;
-            font-size: 20px;
-            top: 10px;
-            right: 10px;
-        }
-
-        .badge {
-            width: 50px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .card {
-            transition: transform 0.3s, box-shadow 0.3s;
-
-            border-radius: 10px;
-            overflow: hidden;
-
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-img-topp {
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .btn-outline-dark:hover {
-            background-color: #212529;
-            color: white;
-        }
-
-        .btn-dark {
-            background-color: #212529;
-        }
-
-        .btn-dark:hover {
-            background-color: #000;
-        }
-
-        .footer {
-            background-color: #212529;
-            color: white;
-        }
-
-        .footer a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            color: white;
-        }
-
-        .social-icon {
-            width: 36px;
-            height: 36px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: all 0.3s;
-        }
-
-        .social-icon:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .wishlist-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 1;
-        }
-
-        .wishlist-icon:hover {
-            color: #dc3545;
-        }
-
-        .sale-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 1;
-        }
-
-        #image-shirt {
-            width: 100%;
-            height: 50%;
-        }
-
-        #small-image {
-            width: 100%;
-            height: 80%;
-        }
-
-        .navbar-nav {
-            font-family: "Merienda", cursive;
-        }
-
-        .navbar-brand {
-            font-family: "Freehand", cursive;
-        }
-    </style>
-
     <!-- header  -->
     <div class="container-fluid p-0 position-relative">
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm py-2 px-5 ">
@@ -355,8 +61,9 @@
                                     viewBox="0 0 16 16">
                                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                                 </svg></a></li>
-                        <li class="list-unstyled"><a href="search_shirt.html"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                                    height="18" fill="currentColor" class="bi text-dark bi-search" viewBox="0 0 16 16">
+                        <li class="list-unstyled"><a href="search_shirt.html"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="18" height="18" fill="currentColor" class="bi text-dark bi-search"
+                                    viewBox="0 0 16 16">
                                     <path
                                         d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                                 </svg></a></li>
@@ -373,13 +80,16 @@
     </div>
 
     <!-- hero-section  -->
-    <section class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Premium Shirt Collection</h1>
-            <p class="lead mb-4">Discover our exclusive range of high-quality shirts for every occasion</p>
-            <a href="index.html" class="btn btn-light btn-lg px-4">Shop Now</a>
-        </div>
-    </section>
+    <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="900">
+        <section class="hero-section text-center">
+            <div class="container">
+                <h1 class="display-4 fw-bold mb-4">Premium Shirt Collection</h1>
+                <p class="lead mb-4">Discover our exclusive range of high-quality shirts for every occasion</p>
+                <a href="index.html" class="btn btn-light btn-lg px-4">Shop Now</a>
+            </div>
+        </section>
+    </div>
+
     <!-- navigation -->
     <!--<div class="container">
         <div class="container">
@@ -466,10 +176,12 @@
     <!-- popular  -->
     <div class="Popular mb-4">
         <div class="container">
-            <div class="container text-center pt-4">
-                <h5 class="pb-2">Popular Shirt</h5>
-                <h4 class="pb-4 special">Our Special Shirts</h4>
+            <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="900">
+                <div class="container text-center pt-4">
+                    <h4 class="pb-4 special">Our Special Shirts</h4>
+                </div>
             </div>
+
             <div class="row g-3">
                 <!-- <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                     <div class="container text-center">
@@ -478,10 +190,10 @@
                             <img id="img_shirt" src="https://assets.adidas.com/images/w_600,f_auto,q_auto/1a6eeb0726ba48c49553af03009ad875_9366/Train_Essentials_Feelready_Training_Tee_Black_IC7438_01_laydown.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <div class="wishlist-icon position-absolute">
-                                    <i class="far fa-heart"></i>
+    onclick="toggleWishlist(this)"                                 <i class="far fa-heart"></i>
                                 </div>
                                 <h6 class="card-title pb-3">adidas originals Summer glow Tee</h6>
-                                <span><img class="position-absolute" id="star" src="./asset/image/fivestar.png" alt=""></span>
+                                <span><img class="position-absolute" id=" onclick="toggleWishlist(this)"star" src="./asset/image/fivestar.png" alt=""></span>
                                 <h6 class="card-text"> 
                                      $20.00 <del>$25.00</del>
                                  </h6>
@@ -491,212 +203,250 @@
                     </div>
                 </div> -->
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
-                            <i class="far fa-heart"></i>
-                        </div>
-                        <img src="asset/image/w-man7.webp" class="card-img-top" alt="Classic White Tee">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-secondary">T-Shirt</span>
-                                <div>
-                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i>
-                                    <span class="ms-1 small">(5.0)</span>
+                    <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">
+                        <div class="card h-100">
+                            <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <img src="asset/image/w-man7.webp" class="card-img-top" alt="Classic White Tee">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-secondary">T-Shirt</span>
+                                    <div>
+                                        <i class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i>
+                                        <span class="ms-1 small">(5.0)</span>
+                                    </div>
+                                </div>
+                                <h5 class="card-title">Classic White Tee</h5>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div><span class="fw-bold product-price">$22.99</span></div>
+                                </div>
+                                <p class="card-text small text-muted mb-3">A breathable, everyday cotton t-shirt for
+                                    casual
+                                    wear.</p>
+                                <div class="d-grid">
+                                    <button class="btn btn-outline-dark" onclick="addToCart(this)">Add to Cart</button>
+
                                 </div>
                             </div>
-                            <h5 class="card-title">Classic White Tee</h5>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <div><span class="fw-bold product-price">$22.99</span></div>
-                            </div>
-                            <p class="card-text small text-muted mb-3">A breathable, everyday cotton t-shirt for casual
-                                wear.</p>
-                            <div class="d-grid">
-                                <button class="btn btn-outline-dark" onclick="addToCart(this)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
 
+
+                <div class="col-md-4 col-sm-6">
+                    <div data-aos="fade-up" data-aos-duration="900">
+                        <div class="card h-100">
+                            <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <img src="asset/image/w-man2.webp" class="card-img-top" alt="Slim Fit Tee">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-secondary">T-Shirt</span>
+                                    <div>
+                                        <i class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i>
+                                        <span class="ms-1 small">(5.0)</span>
+                                    </div>
+                                </div>
+                                <h5 class="card-title">Slim Fit Tee</h5>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div><span class="fw-bold product-price">$26.50</span></div>
+                                </div>
+                                <p class="card-text small text-muted mb-3">Modern slim fit t-shirt that pairs with jeans
+                                    or
+                                    joggers.</p>
+                                <div class="d-grid">
+                                    <button class="btn btn-outline-dark" onclick="addToCart(this) "
+                                        onclick="addToCart(this)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div data-aos="fade-up" data-aos-duration="900">
+                        <div class="card h-100">
+                            <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <img src="asset/image/w-man3.webp" class="card-img-top" alt="Urban Black Tee">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-secondary">T-Shirt</span>
+                                    <div>
+                                        <i class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i>
+                                        <span class="ms-1 small">(5.0)</span>
+                                    </div>
+                                </div>
+                                <h5 class="card-title">Urban Black Tee</h5>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div><span class="fw-bold">$28.00</span></div>
+                                </div>
+                                <p class="card-text small text-muted mb-3">Sleek black t-shirt with a soft-touch finish
+                                    for
+                                    comfort.</p>
+                                <div class="d-grid">
+                                    <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
-                            <i class="far fa-heart"></i>
-                        </div>
-                        <img src="asset/image/w-man2.webp" class="card-img-top" alt="Slim Fit Tee">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-secondary">T-Shirt</span>
-                                <div>
-                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i>
-                                    <span class="ms-1 small">(5.0)</span>
+                    <div data-aos="fade-up" data-aos-duration="900">
+                        <div class="card h-100">
+                            <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <img src="asset/image/w-man4.webp" class="card-img-top" alt="Crew Neck Tee">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-secondary">T-Shirt</span>
+                                    <div>
+                                        <i class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i>
+                                        <span class="ms-1 small">(5.0)</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <h5 class="card-title">Slim Fit Tee</h5>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <div><span class="fw-bold product-price">$26.50</span></div>
-                            </div>
-                            <p class="card-text small text-muted mb-3">Modern slim fit t-shirt that pairs with jeans or
-                                joggers.</p>
-                            <div class="d-grid">
-                               <button class="btn btn-outline-dark" onclick="addToCart(this)">Add to Cart</button>
+                                <h5 class="card-title">Crew Neck Tee</h5>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div><span class="fw-bold">$23.75</span></div>
+                                </div>
+                                <p class="card-text small text-muted mb-3">Comfortable crew neck made with pre-shrunk
+                                    cotton
+                                    blend.</p>
+                                <div class="d-grid">
+                                    <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
-                            <i class="far fa-heart"></i>
-                        </div>
-                        <img src="asset/image/w-man3.webp" class="card-img-top" alt="Urban Black Tee">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-secondary">T-Shirt</span>
-                                <div>
-                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i>
-                                    <span class="ms-1 small">(5.0)</span>
+                    <div data-aos="fade-up" data-aos-duration="900">
+                        <div class="card h-100">
+                            <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <img src="asset/image/w-shoe-18.jpg" class="card-img-top" alt="Running Sneakers">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-primary">Shoes</span>
+                                    <div>
+                                        <i class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i>
+                                        <span class="ms-1 small">(5.0)</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <h5 class="card-title">Urban Black Tee</h5>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <div><span class="fw-bold">$28.00</span></div>
-                            </div>
-                            <p class="card-text small text-muted mb-3">Sleek black t-shirt with a soft-touch finish for
-                                comfort.</p>
-                            <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <h5 class="card-title">Running Sneakers</h5>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div><span class="fw-bold">$64.99</span></div>
+                                </div>
+                                <p class="card-text small text-muted mb-3">Lightweight sneakers built for speed and
+                                    comfort.
+                                </p>
+                                <div class="d-grid">
+                                    <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
-                            <i class="far fa-heart"></i>
-                        </div>
-                        <img src="asset/image/w-man4.webp" class="card-img-top" alt="Crew Neck Tee">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-secondary">T-Shirt</span>
-                                <div>
-                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i>
-                                    <span class="ms-1 small">(5.0)</span>
+                    <div data-aos="fade-up" data-aos-duration="900">
+                        <div class="card h-100">
+                            <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <img src="asset/image/w-man5.webp" class="card-img-top" alt="Relaxed Fit Tee">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-secondary">T-Shirt</span>
+                                    <div>
+                                        <i class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i>
+                                        <span class="ms-1 small">(5.0)</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <h5 class="card-title">Crew Neck Tee</h5>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <div><span class="fw-bold">$23.75</span></div>
-                            </div>
-                            <p class="card-text small text-muted mb-3">Comfortable crew neck made with pre-shrunk cotton
-                                blend.</p>
-                            <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <h5 class="card-title">Relaxed Fit Tee</h5>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div><span class="fw-bold">$21.49</span></div>
+                                </div>
+                                <p class="card-text small text-muted mb-3">Loose fit tee ideal for lounging and casual
+                                    settings.</p>
+                                <div class="d-grid">
+                                    <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
-                            <i class="far fa-heart"></i>
-                        </div>
-                        <img src="asset/image/w-shoe-18.jpg" class="card-img-top" alt="Running Sneakers">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-primary">Shoes</span>
-                                <div>
-                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i>
-                                    <span class="ms-1 small">(5.0)</span>
+                    <div data-aos="fade-up" data-aos-duration="900">
+                        <div class="card h-100">
+                            <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <img src="asset/image/w-man6.webp" class="card-img-top" alt="V-Neck T-Shirt">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-secondary">T-Shirt</span>
+                                    <div>
+                                        <i class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i><i
+                                            class="fas fa-star text-warning"></i>
+                                        <span class="ms-1 small">(5.0)</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <h5 class="card-title">Running Sneakers</h5>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <div><span class="fw-bold">$64.99</span></div>
-                            </div>
-                            <p class="card-text small text-muted mb-3">Lightweight sneakers built for speed and comfort.
-                            </p>
-                            <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <h5 class="card-title">V-Neck T-Shirt</h5>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div><span class="fw-bold">$25.00</span></div>
+                                </div>
+                                <p class="card-text small text-muted mb-3">Stylish v-neck t-shirt for a clean, modern
+                                    look.
+                                </p>
+                                <div class="d-grid">
+                                    <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
-                            <i class="far fa-heart"></i>
-                        </div>
-                        <img src="asset/image/w-man5.webp" class="card-img-top" alt="Relaxed Fit Tee">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-secondary">T-Shirt</span>
-                                <div>
-                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i>
-                                    <span class="ms-1 small">(5.0)</span>
-                                </div>
-                            </div>
-                            <h5 class="card-title">Relaxed Fit Tee</h5>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <div><span class="fw-bold">$21.49</span></div>
-                            </div>
-                            <p class="card-text small text-muted mb-3">Loose fit tee ideal for lounging and casual
-                                settings.</p>
-                            <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
-                            <i class="far fa-heart"></i>
-                        </div>
-                        <img src="asset/image/w-man6.webp" class="card-img-top" alt="V-Neck T-Shirt">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-secondary">T-Shirt</span>
-                                <div>
-                                    <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i>
-                                    <span class="ms-1 small">(5.0)</span>
-                                </div>
-                            </div>
-                            <h5 class="card-title">V-Neck T-Shirt</h5>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <div><span class="fw-bold">$25.00</span></div>
-                            </div>
-                            <p class="card-text small text-muted mb-3">Stylish v-neck t-shirt for a clean, modern look.
-                            </p>
-                            <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
+                   <div data-aos="fade-up" data-aos-duration="900">
+                     <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
                             <i class="far fa-heart"></i>
                         </div>
                         <img src="asset/image/w-shoe-15.jpg" class="card-img-top" alt="Running Shoes">
@@ -721,15 +471,17 @@
                             <p class="card-text small text-muted mb-3">Lightweight running shoes designed for maximum
                                 .</p>
                             <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
+                   </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
+                   <div data-aos="fade-up" data-aos-duration="900">
+                     <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
                             <i class="far fa-heart"></i>
                         </div>
                         <img src="asset/image/w-shoe-17.jpg" class="card-img-top" alt="Formal Shoes">
@@ -754,15 +506,17 @@
                             <p class="card-text small text-muted mb-3">Elegant and durable loafers perfect for formal
                                 occasions.</p>
                             <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
+                   </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
+                   <div data-aos="fade-up" data-aos-duration="900">
+                     <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
                             <i class="far fa-heart "></i>
                         </div>
                         <a href="black_shirt.html">
@@ -785,15 +539,17 @@
                             <p class="card-text small text-muted mb-3">Stylish and sleek black shirt suitable for casual
                                 and formal wear.</p>
                             <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
+                   </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
+                  <div data-aos="fade-up" data-aos-duration="900">
+                      <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
                             <i class="far fa-heart "></i>
                         </div>
                         <img src="asset/image/man1.jpg" class="card-img-top" alt="Blue Hoodie">
@@ -813,15 +569,17 @@
                             <p class="card-text small text-muted mb-3">Warm and comfy hoodie for chilly days with
                                 adjustable drawstrings.</p>
                             <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
                             </div>
                         </div>
-                    </div>
+                    </div>.
+                  </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
+                    <div data-aos="fade-up" data-aos-duration="900">
+                                            <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
                             <i class="far fa-heart "></i>
                         </div>
                         <img src="asset/image/man4.jpg" class="card-img-top" alt="Denim Jacket">
@@ -841,15 +599,17 @@
                             <p class="card-text small text-muted mb-3">Classic denim jacket with a modern fit and
                                 durable stitching.</p>
                             <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
+                   <div data-aos="fade-up" data-aos-duration="900">
+                     <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
                             <i class="far fa-heart "></i>
                         </div>
                         <img src="asset/image/man5.jpg" class="card-img-top" alt="Graphic Tee">
@@ -869,15 +629,17 @@
                             <p class="card-text small text-muted mb-3">Cool printed tee made from breathable fabric for
                                 everyday wear.</p>
                             <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
+                   </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
+                  <div data-aos="fade-up" data-aos-duration="900">
+                      <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
                             <i class="far fa-heart "></i>
                         </div>
                         <img src="asset/image/man7.jpg" class="card-img-top" alt="White Polo Shirt">
@@ -902,14 +664,16 @@
                             <p class="card-text small text-muted mb-3">A breathable and stylish polo perfect for casual
                                 and semi-formal wear.</p>
                             <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
-                </div>
+                  </div>
+                </div >
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
+                   <div data-aos="fade-up" data-aos-duration="900">
+                     <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
                             <i class="far fa-heart "></i>
                         </div>
                         <img src="asset/image/w-shoe-14.jpg" class="card-img-top" alt="Running Shoes">
@@ -934,15 +698,16 @@
                             <p class="card-text small text-muted mb-3">Designed for maximum performance and comfort
                                 during long runs.</p>
                             <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
+                   </div>
                 </div>
-                <!-- Product 1 -->
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
+                   <div data-aos="fade-up" data-aos-duration="900">
+                     <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
                             <i class="far fa-heart"></i>
                         </div>
                         <img src="asset/image/man9.webp" class="card-img-top" alt="Minimalist Cotton Tee">
@@ -963,16 +728,17 @@
                             <p class="card-text small text-muted mb-3">Lightweight and soft, ideal for everyday casual
                                 wear.</p>
                             <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
+                   </div>
                 </div>
 
-                <!-- Product 2 -->
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
+                  <div data-aos="fade-up" data-aos-duration="900">
+                      <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
                             <i class="far fa-heart"></i>
                         </div>
                         <img src="asset/image/man8.jpg" class="card-img-top" alt="Urban Style T-Shirt">
@@ -993,16 +759,16 @@
                             <p class="card-text small text-muted mb-3">Trendy design with a perfect fit for street-style
                                 lovers.</p>
                             <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
+                  </div>
                 </div>
-
-                <!-- Product 3 -->
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="wishlist-icon position-absolute px-1">
+                    <div data-aos="fade-up" data-aos-duration="900">
+                        <div class="card h-100">
+                        <div class="wishlist-icon position-absolute px-1" onclick="toggleWishlist(this)">
                             <i class="far fa-heart"></i>
                         </div>
                         <img src="asset/image/man6.jpg" class="card-img-top" alt="Slim Fit Tee">
@@ -1023,9 +789,10 @@
                             <p class="card-text small text-muted mb-3">Form-fitting T-shirt ideal for layering or solo
                                 wear.</p>
                             <div class="d-grid">
-                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                <button class="btn btn-outline-dark " onclick="addToCart(this)">Add to Cart</button>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
 
@@ -1034,25 +801,18 @@
             </div>
         </div>
     </div>
-
-
-    <!-- size shirt  -->
-    <div class="container">
+    <!-- <div class="d-flex justify-content-evenly">
+                        <img id="img" alt="Nike logo"src="https://www.customink.com/assets/site_content/svg/brands/nike-19fe8521ae104cab0d951bccca85afe34de369da692d8116c79e42dfc8acba7e.svg">
+                        <img id="img" alt="New era logo"src="https://www.customink.com/assets/site_content/svg/brands/the-north-face-8ed933626eb5f67a581d24751790593d69cda06dcf79fcbd6313b1a3a778741e.svg">
+                        <img id="img" alt="Carhartt logo"src="https://www.customink.com/assets/site_content/svg/brands/adidas-6b354ee59eae62fc40a66e3265650287f46c5b288d607576e8e05bfe15dd5f09.svg">
+                        <img id="img" alt="The north face logo"src="https://www.customink.com/assets/site_content/svg/brands/ogio-2e369a92c85bfab9fe2bc929ddac1e1e66f8638f7c9338e99099c7173f9feeee.svg">       
+                </div> -->
+    <!-- <div class="container">
         <div class="container pt-5 m-0">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12 p-0">
                     <div class="container slider">
                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                            <!-- <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                                    aria-label="Slide 4"></button>
-                            </div> -->
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <img id="image-shirt" src="asset/image/adidas1.png" class="d-block w-100" alt="...">
@@ -1087,35 +847,30 @@
                         <div class="col-2">
                             <div class="card active" type="button" data-bs-target="#carouselExampleIndicators"
                                 data-bs-slide-to="0" aria-current="true" aria-label="Slide 1">
-                                <!-- img -->
                                 <img id="small-image" src="asset/image/adidas1.png" alt="">
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="card active" type="button" data-bs-target="#carouselExampleIndicators"
                                 data-bs-slide-to="1" aria-current="true" aria-label="Slide 2">
-                                <!-- img -->
                                 <img id="small-image" src="asset/image/adidas2.png" alt="">
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="card active" type="button" data-bs-target="#carouselExampleIndicators"
                                 data-bs-slide-to="2" aria-current="true" aria-label="Slide 3">
-                                <!-- img -->
                                 <img id="small-image" src="asset/image/adidas3.png" alt="">
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="card active" type="button" data-bs-target="#carouselExampleIndicators"
                                 data-bs-slide-to="3" aria-current="true" aria-label="Slide 4">
-                                <!-- img -->
                                 <img id="small-image" src="asset/image/adidas4.png" alt="">
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="card active" type="button" data-bs-target="#carouselExampleIndicators"
                                 data-bs-slide-to="4" aria-current="true" aria-label="Slide 5">
-                                <!-- img -->
                                 <img id="small-image" src="asset/image/adidas5.png" alt="">
                             </div>
 
@@ -1144,8 +899,7 @@
             </div>
 
         </div>
-    </div>
-
+    </div> -->
     <div class="card-modol" id="card-modol">
         <div class="card-head">
             <h2>Your Shirt Cart</h2>
@@ -1157,8 +911,10 @@
         <div class="card-total">
             Total: $ <span id="total-price">0</span>
         </div>
-        
-        <a id="qr" href="qr.html"><div  class="checkout-btn">checkout</div></a>
+
+        <a id="qr" href="qr.html">
+            <div class="checkout-btn">checkout</div>
+        </a>
     </div>
 
     <!-- <img src="" alt="" class="card-item-image">
@@ -1172,10 +928,10 @@
     </div>
     <button type="button" class="remove" onclick="removeItem">x</button>
  -->
-
     <!-- Newsletter -->
     <section class="py-5 bg-dark text-white">
-        <div class="container">
+        <div data-aos="fade-up" data-aos-duration="600">
+                    <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
                     <h3>Subscribe to Our Newsletter</h3>
@@ -1191,67 +947,70 @@
                 </div>
             </div>
         </div>
+        </div>
     </section>
     <section class="logo">
 
     </section>
     <!-- Footer -->
     <footer class="footer py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="mb-3">StyleHub</h5>
-                    <p class="text-muted">Your destination for premium quality shirts and fashion essentials.</p>
-                    <div class="mt-3">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+            <div data-aos="fade-up" data-aos-duration="500">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <h5 class="mb-3">StyleHub</h5>
+                            <p class="text-muted">Your destination for premium quality shirts and fashion essentials.</p>
+                            <div class="mt-3">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <h5 class="mb-3">Shop</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#">Men's Shirts</a></li>
+                                <li class="mb-2"><a href="#">Women's Shirts</a></li>
+                                <li class="mb-2"><a href="#">New Arrivals</a></li>
+                                <li class="mb-2"><a href="#">Sale</a></li>
+                                <li class="mb-2"><a href="#">Collections</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <h5 class="mb-3">Help</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#">FAQs</a></li>
+                                <li class="mb-2"><a href="#">Shipping Info</a></li>
+                                <li class="mb-2"><a href="#">Returns</a></li>
+                                <li class="mb-2"><a href="#">Size Guide</a></li>
+                                <li class="mb-2"><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <h5 class="mb-3">Contact</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Fashion Street, City, Country
+                                </li>
+                                <li class="mb-2"><i class="fas fa-phone me-2"></i>0768020358</li>
+                                <li class="mb-2"><i class="fas fa-envelope me-2"></i>sokphari8@gmail.com</li>
+                                <li class="mb-2"><i class="fas fa-clock me-2"></i> Mon-Fri: 9AM - 6PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr class="my-4 bg-secondary">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="mb-md-0">© 2025 StyleHub. All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <img src="./asset/image/Qr.png" alt="Payment Methods" class="img-fluid" style="max-width: 250px;">
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="mb-3">Shop</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#">Men's Shirts</a></li>
-                        <li class="mb-2"><a href="#">Women's Shirts</a></li>
-                        <li class="mb-2"><a href="#">New Arrivals</a></li>
-                        <li class="mb-2"><a href="#">Sale</a></li>
-                        <li class="mb-2"><a href="#">Collections</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="mb-3">Help</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#">FAQs</a></li>
-                        <li class="mb-2"><a href="#">Shipping Info</a></li>
-                        <li class="mb-2"><a href="#">Returns</a></li>
-                        <li class="mb-2"><a href="#">Size Guide</a></li>
-                        <li class="mb-2"><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="mb-3">Contact</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Fashion Street, City, Country
-                        </li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i>0768020358</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>sokphari8@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Mon-Fri: 9AM - 6PM</li>
-                    </ul>
-                </div>
             </div>
-            <hr class="my-4 bg-secondary">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-md-0">© 2025 StyleHub. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <img src="./asset/image/myman.png" alt="Payment Methods" class="img-fluid"
-                        style="max-width: 250px;">
-                </div>
-            </div>
-        </div>
-    </footer>
+            </footer>
+    
 
 
 </body>
@@ -1259,7 +1018,10 @@
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
     crossorigin="anonymous"></script>
 <script src="javascript.js">
-    //card open and close
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
 </script>
 
 </html>
