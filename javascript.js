@@ -26,7 +26,7 @@ function addToCart(button) {
 
     updateLocalStorage();
     updateCartDisplay();
-    updateCartCount(); // ✅ Update count
+    updateCartCount();  
 }
 
 // Update the modal cart
@@ -73,7 +73,7 @@ function changeQty(title, amount) {
 
     updateLocalStorage();
     updateCartDisplay();
-    updateCartCount(); // ✅ Update count after change
+    updateCartCount(); 
 }
 
 // Remove item
@@ -81,7 +81,7 @@ function removeItem(title) {
     cartItems = cartItems.filter(i => i.title !== title);
     updateLocalStorage();
     updateCartDisplay();
-    updateCartCount(); // ✅ Update count after delete
+    updateCartCount(); 
 }
 
 // Save to localStorage
@@ -123,7 +123,7 @@ function toggleWishlist(iconContainer) {
 
     if (icon.classList.contains('far')) {
         icon.classList.remove('far');
-        icon.classList.add('fas', 'text-danger'); // filled heart + red
+        icon.classList.add('fas', 'text-danger');  
     } else {
         icon.classList.remove('fas', 'text-danger');
         icon.classList.add('far'); // outline heart
