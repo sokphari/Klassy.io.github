@@ -1,7 +1,3 @@
-
-// let cardItem = JSON.parse(localStorage.getItem("cardItem")) || [];
-// let total = 0;
-// let itemsCount = 0;
 let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
 // Show/Hide modal
@@ -30,6 +26,7 @@ function addToCart(button) {
 
     updateLocalStorage();
     updateCartDisplay();
+    updateCartCount(); // ✅ Update count
 }
 
 // Update the modal cart
@@ -46,17 +43,16 @@ function updateCartDisplay() {
         const li = document.createElement('li');
         li.classList = "card-item";
         li.innerHTML = `
-              <img src="${item.image}" alt="" class="card-item-image">
-        <div class="card-item-detail">
-        <div class="card-item-name">${item.title}</div>
-        <div class="card-item-price">$${item.price.toFixed(2)} x ${item.quantity}</div>
-         </div>
-        <div class="d-flex align-items-center">
-            <button class="btn btn-sm btn-primary me-1"  onclick="changeQty('${item.title}', -1)">-</button>
-            <button class="btn btn-sm btn-info me-1" onclick="changeQty('${item.title}', 1)">+</button>
-            <button class="btn btn-sm btn-danger" onclick="removeItem('${item.title}')"><i class="fa-solid fa-trash"></i></button>
-        </div>
-
+            <img src="${item.image}" alt="" class="card-item-image">
+            <div class="card-item-detail">
+                <div class="card-item-name">${item.title}</div>
+                <div class="card-item-price">$${item.price.toFixed(2)} x ${item.quantity}</div>
+            </div>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-sm btn-primary me-1" onclick="changeQty('${item.title}', -1)">-</button>
+                <button class="btn btn-sm btn-info me-1" onclick="changeQty('${item.title}', 1)">+</button>
+                <button class="btn btn-sm btn-danger" onclick="removeItem('${item.title}')"><i class="fa-solid fa-trash"></i></button>
+            </div>
         `;
         cartList.appendChild(li);
     });
@@ -68,12 +64,16 @@ function updateCartDisplay() {
 function changeQty(title, amount) {
     const item = cartItems.find(i => i.title === title);
     if (!item) return;
+
     item.quantity += amount;
+
     if (item.quantity <= 0) {
         cartItems = cartItems.filter(i => i.title !== title);
     }
+
     updateLocalStorage();
     updateCartDisplay();
+    updateCartCount(); // ✅ Update count after change
 }
 
 // Remove item
@@ -81,6 +81,7 @@ function removeItem(title) {
     cartItems = cartItems.filter(i => i.title !== title);
     updateLocalStorage();
     updateCartDisplay();
+    updateCartCount(); // ✅ Update count after delete
 }
 
 // Save to localStorage
@@ -88,8 +89,16 @@ function updateLocalStorage() {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
 
-// Init on load
+// Update cart count icon
+function updateCartCount() {
+    const iconCount = document.querySelector('.icon-count');
+    const count = cartItems.reduce((total, item) => total + item.quantity, 0);
+    iconCount.textContent = count;
+}
+
+// Init on page load
 updateCartDisplay();
+updateCartCount();
 
 
 
